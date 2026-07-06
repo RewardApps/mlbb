@@ -1,80 +1,681 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - MLBB Rewards</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #1a1a1a;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #2c3e50;
-            margin-top: 30px;
-        }
-        p {
-            margin-bottom: 16px;
-        }
-        .last-updated {
-            color: #7f8c8d;
-            font-size: 0.9em;
-            margin-bottom: 30px;
-        }
-        ul {
-            margin-bottom: 16px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Easy Diamond-Get MLBB Diamonds</title>
+
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --border: #e5e7eb;
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --primary: #60a5fa;
+      --primary-dark: #3b82f6;
+      --border: #1f2937;
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 35%), var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 24px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .page {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      right: -70px;
+      top: -70px;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.16);
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .logo-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #fff;
+      color: #2563eb;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      max-width: 760px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .btn-light {
+      background: #fff;
+      color: #1d4ed8;
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+    }
+
+    .sidebar,
+    .content-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar {
+      padding: 22px;
+      position: sticky;
+      top: 20px;
+      height: fit-content;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 14px;
+      font-size: 16px;
+    }
+
+    .nav-link {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+      transition: background 0.2s ease, color 0.2s ease;
+      font-size: 14px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: rgba(37, 99, 235, 0.12);
+      color: var(--primary);
+    }
+
+    .content-card {
+      padding: 28px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .pill {
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: transparent;
+      color: var(--text);
+      margin-bottom: 20px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .search-box:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    }
+
+    .accordion {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      background: var(--card);
+    }
+
+    .accordion-header {
+      width: 100%;
+      background: transparent;
+      color: var(--text);
+      border: none;
+      padding: 18px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .accordion-header span {
+      color: var(--primary);
+      font-size: 22px;
+      transition: transform 0.25s ease;
+    }
+
+    .accordion.active .accordion-header span {
+      transform: rotate(45deg);
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 20px;
+      color: var(--muted);
+    }
+
+    .accordion.active .accordion-body {
+      padding-bottom: 20px;
+    }
+
+    .accordion-body ul {
+      margin-left: 22px;
+      margin-top: 10px;
+    }
+
+    .accordion-body li {
+      margin-bottom: 8px;
+    }
+
+    .notice {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      padding: 16px;
+      border-radius: 14px;
+      color: var(--text);
+      margin-top: 12px;
+    }
+
+    .contact-box {
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.22);
+      padding: 18px;
+      border-radius: 16px;
+      margin-top: 12px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      margin: 24px 0 10px;
+      font-size: 14px;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      cursor: pointer;
+      display: none;
+      font-size: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 850px) {
+      body {
+        padding: 14px;
+      }
+
+      .hero {
+        padding: 26px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .content-card {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: February 12, 2026</p>
+  <div class="page">
+    <header class="hero">
+      <div class="app-badge">
+        <div class="logo-circle">D</div>
+        Easy Diamond-Get MLBB Diamonds
+      </div>
 
-        <h2>1. Introduction</h2>
-        <p>Welcome to MLBB Rewards. We respect your privacy and want to protect your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our application and tell you about your privacy rights.</p>
+      <h1>Privacy Policy</h1>
 
-        <h2>2. Data We Collect</h2>
-        <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
-        <ul>
-            <li><strong>Identity Data:</strong> includes name and unique identifier.</li>
-            <li><strong>Contact Data:</strong> includes email address.</li>
-        </ul>
+      <p>
+        This Privacy Policy explains how Easy Diamond-Get MLBB Diamonds collects, uses,
+        protects, and manages user information when you use our mobile application.
+      </p>
 
-        <h2>3. How We Use Your Data</h2>
-        <p>We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:</p>
-        <ul>
-            <li>To provide you with reward services.</li>
-            <li>To manage your account and points.</li>
-            <li>To improve our app and services.</li>
-        </ul>
+      <div class="top-actions">
+        <button class="btn btn-light" id="themeToggle">🌙 Toggle Dark Mode</button>
+        <a class="btn btn-ghost" href="mailto:ffdiamondapp1221@gmail.com">Contact Support</a>
+      </div>
+    </header>
 
-        <h2>4. AdMob and Third Parties</h2>
-        <p>This app uses Google AdMob to serve advertisements. Google may use information about your visits to this and other websites in order to provide advertisements about goods and services of interest to you. If you would like more information about this practice and to know your choices about not having this information used by Google, please visit Google's privacy policy.</p>
+    <main class="grid">
+      <aside class="sidebar">
+        <h3>Quick Navigation</h3>
+        <a href="#introduction" class="nav-link">Introduction</a>
+        <a href="#data" class="nav-link">Data We Collect</a>
+        <a href="#use" class="nav-link">How We Use Data</a>
+        <a href="#ads" class="nav-link">AdMob & Third Parties</a>
+        <a href="#security" class="nav-link">Data Security</a>
+        <a href="#children" class="nav-link">Children’s Privacy</a>
+        <a href="#deletion" class="nav-link">Data Deletion</a>
+        <a href="#contact" class="nav-link">Contact Us</a>
+      </aside>
 
-        <h2>5. Data Security</h2>
-        <p>We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed.</p>
+      <section class="content-card">
+        <div class="meta">
+          <div class="pill">Last updated: July 6, 2026</div>
+          <div class="pill">App: Easy Diamond-Get MLBB Diamonds</div>
+        </div>
 
-        <h2>6. Data Deletion</h2>
-        <p>You have the right to request the deletion of your account and personal data at any time. You can do this directly within the app by navigating to <strong>Profile > Delete Account</strong>.</p>
-        <p>Alternatively, you can submit a deletion request via our external form linked in the app or contact us at <a href="mailto:ffdiamondapp1221@gmail.com">ffdiamondapp1221@gmail.com</a>. Upon request, we will permanently delete your account, associated points, and all personal data from our systems within 7-14 business days.</p>
-    </div>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-box"
+          placeholder="Search this privacy policy..."
+        />
+
+        <div class="accordion active policy-section" id="introduction">
+          <button class="accordion-header">
+            1. Introduction <span>+</span>
+          </button>
+          <div class="accordion-body">
+            <p>
+              Welcome to <strong>Easy Diamond-Get MLBB Diamonds</strong>. We respect your
+              privacy and are committed to protecting your personal data. This Privacy Policy
+              explains what information we collect, how we use it, and what choices you have.
+            </p>
+
+            <div class="notice">
+              <strong>Disclaimer:</strong> Easy Diamond-Get MLBB Diamonds is an independent app.
+              It is not officially affiliated with, endorsed by, or sponsored by Mobile Legends:
+              Bang Bang, Moonton, or any related brand.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion policy-section" id="data">
+          <button class="accordion-header">
+            2. Data We Collect <span>+</span>
+          </button>
+          <div class="accordion-body">
+            <p>
+              We may collect, use, store, and transfer different kinds of data depending on how
+              you use the app.
+            </p>
+
+            <ul>
+              <li><strong>Identity Data:</strong> name, username, user ID, or unique app identifier.</li>
+              <li><strong>Contact Data:</strong> email address, if provided by the user.</li>
+              <li><strong>Reward Data:</strong> points, coins, completed tasks, and redemption history.</li>
+              <li><strong>Device Data:</strong> device type, operating system, app version, and diagnostic data.</li>
+              <li><strong>Advertising Data:</strong> ad interactions and related identifiers used by advertising partners.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion policy-section" id="use">
+          <button class="accordion-header">
+            3. How We Use Your Data <span>+</span>
+          </button>
+          <div class="accordion-body">
+            <p>We use your information for the following purposes:</p>
+
+            <ul>
+              <li>To provide reward-related services inside the app.</li>
+              <li>To manage your account, points, tasks, and redemption requests.</li>
+              <li>To prevent fraud, abuse, duplicate accounts, or suspicious activity.</li>
+              <li>To improve app performance, features, and user experience.</li>
+              <li>To show ads and measure ad performance.</li>
+              <li>To contact you when support or account verification is needed.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion policy-section" id="ads">
+          <button class="accordion-header">
+            4. AdMob and Third Parties <span>+</span>
+          </button>
+          <div class="accordion-body">
+            <p>
+              This app uses Google AdMob to display advertisements. Google and its partners may
+              collect and use certain information, such as device identifiers, ad interactions,
+              approximate location, and app usage data, to serve and measure ads.
+            </p>
+
+            <p>
+              You can manage ad personalization through your device settings or Google ad settings.
+              Third-party services may process data according to their own privacy policies.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion policy-section" id="security">
+          <button class="accordion-header">
+            5. Data Security <span>+</span>
+          </button>
+          <div class="accordion-body">
+            <p>
+              We use reasonable security measures to help protect your personal data from accidental
+              loss, unauthorized access, misuse, alteration, or disclosure.
+            </p>
+
+            <p>
+              However, no method of internet transmission or electronic storage is completely secure.
+              Therefore, we cannot guarantee absolute security.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion policy-section" id="children">
+          <button class="accordion-header">
+            6. Children’s Privacy <span>+</span>
+          </button>
+          <div class="accordion-body">
+            <p>
+              Our app is not intended to knowingly collect personal information from children under
+              the age required by applicable law without parental consent.
+            </p>
+
+            <p>
+              If you believe that a child has provided us with personal information, please contact
+              us so we can review and delete the information where required.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion policy-section" id="deletion">
+          <button class="accordion-header">
+            7. Data Deletion <span>+</span>
+          </button>
+          <div class="accordion-body">
+            <p>
+              You have the right to request deletion of your account and personal data at any time.
+              You can do this directly inside the app by going to:
+            </p>
+
+            <p><strong>Profile &gt; Delete Account</strong></p>
+
+            <p>
+              You may also submit a deletion request through the external form linked inside the app
+              or by contacting us by email. After receiving your request, we will delete your account,
+              associated points, reward history, and personal data from our systems within
+              <strong>7–14 business days</strong>, unless we are required to keep certain information
+              for legal, fraud-prevention, or security reasons.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion policy-section" id="contact">
+          <button class="accordion-header">
+            8. Contact Us <span>+</span>
+          </button>
+          <div class="accordion-body">
+            <p>
+              If you have questions about this Privacy Policy or want to request account/data deletion,
+              contact us here:
+            </p>
+
+            <div class="contact-box">
+              <p><strong>Email:</strong> <span id="emailText">ffdiamondapp1221@gmail.com</span></p>
+
+              <div class="contact-actions">
+                <a class="btn btn-primary" href="mailto:ffdiamondapp1221@gmail.com">
+                  Send Email
+                </a>
+
+                <button class="btn btn-secondary" id="copyEmail">
+                  Copy Email
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Easy Diamond-Get MLBB Diamonds. All rights reserved.
+    </footer>
+  </div>
+
+  <button id="backToTop">↑</button>
+
+  <script>
+    const accordions = document.querySelectorAll(".accordion");
+    const themeToggle = document.getElementById("themeToggle");
+    const searchInput = document.getElementById("searchInput");
+    const backToTop = document.getElementById("backToTop");
+    const copyEmail = document.getElementById("copyEmail");
+    const emailText = document.getElementById("emailText");
+
+    accordions.forEach((accordion) => {
+      const header = accordion.querySelector(".accordion-header");
+      const body = accordion.querySelector(".accordion-body");
+
+      if (accordion.classList.contains("active")) {
+        body.style.maxHeight = body.scrollHeight + "px";
+      }
+
+      header.addEventListener("click", () => {
+        accordion.classList.toggle("active");
+
+        if (accordion.classList.contains("active")) {
+          body.style.maxHeight = body.scrollHeight + "px";
+        } else {
+          body.style.maxHeight = null;
+        }
+      });
+    });
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+
+      const isDark = document.body.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      themeToggle.textContent = isDark ? "☀️ Toggle Light Mode" : "🌙 Toggle Dark Mode";
+    });
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+      themeToggle.textContent = "☀️ Toggle Light Mode";
+    }
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase().trim();
+
+      document.querySelectorAll(".policy-section").forEach((section) => {
+        const text = section.innerText.toLowerCase();
+
+        if (text.includes(query)) {
+          section.classList.remove("hidden");
+
+          if (query.length > 0) {
+            section.classList.add("active");
+            const body = section.querySelector(".accordion-body");
+            body.style.maxHeight = body.scrollHeight + "px";
+          }
+        } else {
+          section.classList.add("hidden");
+        }
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 400 ? "block" : "none";
+
+      const sections = document.querySelectorAll(".policy-section");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    copyEmail.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(emailText.textContent);
+        copyEmail.textContent = "Copied!";
+        setTimeout(() => {
+          copyEmail.textContent = "Copy Email";
+        }, 1500);
+      } catch (error) {
+        alert("Email: " + emailText.textContent);
+      }
+    });
+  </script>
 </body>
 </html>
